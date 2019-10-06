@@ -1,0 +1,76 @@
+<div class = "body">
+    <div class="tieude">
+        <img src="assets\images\banner.png">
+    </div>
+    <ul class="nav myNavs">
+        <li class="nav-item">
+            <a class="nav-link active" [routerLink]="['/assignment']">Ji Naul Exam Online</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/gioithieu']">Giới thiệu</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/lienhe']">Liên hệ</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/gopy']">Góp ý</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/hoidap']">Hỏi đáp</a>
+        </li>
+        <div class="input-group mb-3 mySearch">
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Tìm đề thi...">
+            <div class="input-group-append">
+                <span class="input-group-text"><i class='fas fa-search'></i></span>
+            </div>
+        </div>
+        <div class="dropdown dropleft myDropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Tài khoản
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" [routerLink]="['/dangki']">Đăng kí</a>
+                <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng nhập</a>
+                <a class="dropdown-item" [routerLink]="['/doimatkhau']">Quên mật khẩu</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng xuất</a>
+                <a class="dropdown-item" [routerLink]="['/doimatkhau']">Đổi mật khẩu</a>
+                <a class="dropdown-item" [routerLink]="['/taikhoan']">Cập nhập tài khoản</a>
+            </div>
+        </div>
+    </ul>
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Họ và Tên của bạn là:</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+            </div>   
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Địa chỉ email của bạn là:</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+            </div>  
+            <div class="stars">
+                <label for="exampleFormControlTextarea1">Đánh giá của bạn về chúng tôi: </label>
+                <form action="">
+                    <input class="star star-5" id="star-5" type="radio" name="star"/>
+                    <label class="star star-5" for="star-5"></label>
+                    <input class="star star-4" id="star-4" type="radio" name="star"/>
+                    <label class="star star-4" for="star-4"></label>
+                    <input class="star star-3" id="star-3" type="radio" name="star"/>
+                    <label class="star star-3" for="star-3"></label>
+                    <input class="star star-2" id="star-2" type="radio" name="star"/>
+                    <label class="star star-2" for="star-2"></label>
+                    <input class="star star-1" id="star-1" type="radio" name="star"/>
+                    <label class="star star-1" for="star-1"></label>
+                </form>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Hãy nhập nhận xét của bạn vào đây:</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm">Gửi đi</button>
+            <hr>
+            <h4>Cảm ơn những ý kiến và đánh giá của bạn.</h4>
+        </form>
+    </div>
+</div>

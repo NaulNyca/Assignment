@@ -1,0 +1,125 @@
+<div class = "body">
+        <div class="tieude">
+            <img src="assets\images\banner.png">
+        </div>
+        <ul class="nav myNavs">
+            <li class="nav-item">
+                <a class="nav-link active" [routerLink]="['/assignment']">Ji Naul Exam Online</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/gioithieu']">Giới thiệu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/lienhe']">Liên hệ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/gopy']">Góp ý</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/hoidap']">Hỏi đáp</a>
+            </li>
+            <div class="input-group mb-3 mySearch">
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Tìm đề thi...">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class='fas fa-search'></i></span>
+                </div>
+            </div>
+            <div class="dropdown dropleft myDropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tài khoản
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" [routerLink]="['/dangki']">Đăng kí</a>
+                    <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng nhập</a>
+                    <a class="dropdown-item" [routerLink]="['/doimatkhau']">Quên mật khẩu</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng xuất</a>
+                    <a class="dropdown-item" [routerLink]="['/doimatkhau']">Đổi mật khẩu</a>
+                    <a class="dropdown-item" [routerLink]="['/taikhoan']">Cập nhập tài khoản</a>
+                </div>
+            </div>
+        </ul>
+        <div class="container">
+            <h3>Phần hỏi-đáp dành cho thành viên của Ji Naul Exam Online</h3>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Đặt câu hỏi: (Bạn cần đăng nhập trước khi đặt câu hỏi.)</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Câu hỏi của bạn...">
+            </div>
+            <h5>Câu hỏi nổi bật:</h5>
+            
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Nguyễn Văn Ân: Trang web này có đáng tin cậy không?
+                        </button>
+                    </h2>
+                    </div>
+                
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Rất đáng tin cậy ạ! Web của chúng mình lên kết với rất nhiều trường cao đẳng và đại học, do đó bạn không phải lo về vấn đề bảo mật cũng như thông tin điểm. Web của chúng mình còn có một bộ phận hỗ trợ riêng nữa ạ!
+                    </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Trần Văn Bưởi: Em có thể xem lại bài thi của mình được không ạ?
+                        </button>
+                    </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Được em nhé!
+                    </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Châu Thị Ánh: Em bị lỡ giờ thi, em có thể xin thi lại được không ạ?
+                        </button>
+                    </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Bạn vui lòng vào phần liên hệ và điền thông tin với nội dung là xin thi lại với lý do giúp mình nha!
+                    </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingFour">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Hồ Văn Siêng: Có tài liệu ôn tập không ạ?
+                        </button>
+                    </h2>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Không có bạn ạ! Bạn vui lòng liên hệ giáo viên giúp mình nha!
+                    </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingFive">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Trịnh Văn Mắc: Ad cho em hỏi sao em không vào được bài thi ạ?
+                        </button>
+                    </h2>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Bạn kiểm tra Email giúp mình nha!
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>       
+    </div>
+        

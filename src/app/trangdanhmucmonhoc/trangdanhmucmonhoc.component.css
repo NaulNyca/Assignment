@@ -1,0 +1,68 @@
+.body {
+    background-image: url(/assets/lonely-pink-flower-on-white-background_23-2147601156.jpg);
+    height: 60em;
+}
+.tieude img {
+    width: 100%;
+    height: 12em;
+    margin:  0 0 1em 0;
+}
+.myNavs {
+    background-color:bisque;
+    height: 2.6em;
+}
+.myDropdown {
+    margin: 0.1em 0 0 13%;
+}
+.myDropdown button {
+    color: blue;
+    background-color:white;
+    border: none;
+    margin: 0.05em 0 0 0;
+}
+.mySearch {
+    width: 46%;
+    margin: 0.1em 0 0 0;
+}
+.containerleft {
+    width: 65%;
+    margin-top: 1em;
+    float: left;
+}
+.containerright {
+    width: 30%;
+    float: left;
+    margin-left: 5%;
+    margin-top: 1em;
+    font-weight: bold;
+}
+.myCard {
+    width: 40%;
+    margin: 0 0 2em 9%;
+    float: left;
+    height: 18em;
+}
+.top {
+    height: 40em;
+}
+.bottom {
+    height: 2em;
+    text-align: center;
+    margin: 0 0 0 8%;
+}
+.bottom i {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 5%;
+    height: 1.5em;
+    padding: 0.2em 0 0 0;
+}
+.dmmh {
+    background-color:bisque;
+}
+.dmmh i {
+    margin: 0 2% 0 0;
+}
+.click:hover {
+    color: blue;
+}

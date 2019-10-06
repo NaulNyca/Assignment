@@ -1,0 +1,64 @@
+<div class = "body">
+    <div class="tieude">
+        <img src="assets\images\banner.png">
+    </div>
+    <ul class="nav myNavs">
+        <li class="nav-item">
+            <a class="nav-link active" [routerLink]="['/assignment']">Ji Naul Exam Online</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/gioithieu']">Giới thiệu</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/lienhe']">Liên hệ</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/gopy']">Góp ý</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/hoidap']">Hỏi đáp</a>
+        </li>
+        <div class="input-group mb-3 mySearch">
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Tìm đề thi...">
+            <div class="input-group-append">
+                <span class="input-group-text"><i class='fas fa-search'></i></span>
+            </div>
+        </div>
+        <div class="dropdown dropleft myDropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Tài khoản
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" [routerLink]="['/dangki']">Đăng kí</a>
+                <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng nhập</a>
+                <a class="dropdown-item" [routerLink]="['/doimatkhau']">Quên mật khẩu</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng xuất</a>
+                <a class="dropdown-item" [routerLink]="['/doimatkhau']">Đổi mật khẩu</a>
+                <a class="dropdown-item" [routerLink]="['/taikhoan']">Cập nhập tài khoản</a>
+            </div>
+        </div>
+    </ul>
+    <div class="container">
+        <h3>Thông tin liên hệ:</h3>
+        <h6>Ji Naul Exam Online</h6>
+        <h6>Số điện thoại hỗ trợ: 0334371730 | Email hỗ trợ: naulnyca@gmail.com</h6>
+        <h6>Địa chỉ: số 12 Trịnh Đình Thảo, phường Hòa Thạnh, quận Tân Phú, TP.HCM</h6>
+        <form>
+            <div class="form-group hopthu">
+                <label for="exampleInputEmail1">Hợp thư hỗ trợ</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tiêu đề">
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Họ và Tên">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Số điện thoại">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Nội dung"></textarea>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Nhận thông báo khi được phản hồi</label>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm">Gửi thông tin</button>
+            </div>
+        </form>
+    </div>       
+</div>
+    

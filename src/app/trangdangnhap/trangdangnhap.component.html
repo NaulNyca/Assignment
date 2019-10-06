@@ -1,0 +1,74 @@
+<div class="body">      
+    <div class="tieude">
+        <img src="assets\images\banner.png">
+    </div>
+    <ul class="nav myNavs">
+        <li class="nav-item">
+            <a class="nav-link active" [routerLink]="['/assignment']">Ji Naul Exam Online</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/gioithieu']">Giới thiệu</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/lienhe']">Liên hệ</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/gopy']">Góp ý</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/hoidap']">Hỏi đáp</a>
+        </li>
+        <div class="input-group mb-3 mySearch">
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Tìm đề thi...">
+            <div class="input-group-append">
+                <span class="input-group-text"><i class='fas fa-search'></i></span>
+            </div>
+        </div>
+        <div class="dropdown dropleft myDropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Tài khoản
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" [routerLink]="['/dangki']">Đăng kí</a>
+                <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng nhập</a>
+                <a class="dropdown-item" [routerLink]="['/doimatkhau']">Quên mật khẩu</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng xuất</a>
+                <a class="dropdown-item" [routerLink]="['/doimatkhau']">Đổi mật khẩu</a>
+                <a class="dropdown-item" [routerLink]="['/taikhoan']">Cập nhập tài khoản</a>
+            </div>
+        </div>
+    </ul>
+    <div class="thantrang">
+        <div class="container"> 
+            <legend>
+                <a href="#"><i class="glyphicon glyphicon-globe"></i></a> Đăng nhập để nhận thông báo sớm nhất về các bài kiểm tra và thi!
+            </legend> 
+            <form class="form" role="form"> 
+                <input class="form-control" name="account" placeholder="Nhập email hoặc số điện thoại" type="text">
+                <input class="form-control" name="password" placeholder="Mật khẩu" type="password">
+                <div class="tucach">
+                    <label for="">Đăng nhập với tư cách: </label> 
+                    <select class="form-control">              
+                        <option value="Day" name="sex" id="inlineoption1" value="male">Sinh viên</option>
+                        <option value="Day" name="sex" id="inlineoption2" value="female">Giáo viên</option>
+                        <option value="Day" name="sex" id="inlineoption3" value="none">Ban giám hiệu</option>
+                    </select> 
+                </div> 
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Nhớ tôi</label>
+                </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" [routerLink]="['/danhmucmonhoc']">Đăng nhập</button> 
+            <div class="luuy">
+                <h5>Lưu ý để tránh trường hợp thi hộ:</h5>
+                <h6>- Sinh viên không được sử dụng các phần mền kết nối máy tính, truy cập hỗ trợ từ xa. Chương trình sẽ thực hiện các quyền kiểm soát để kiểm tra máy tính có lỗi vi phạm hay không.
+                <br>- Hội đồng thi sẽ lấy dữ liệu webcam từ máy tính của bạn.
+                <br>- Sinh viên vui lòng chấp nhận các yêu cầu từ trang web để có thể vào phòng thi dễ dàng.
+                <br>- Nếu phát hiện trường hợp vi phạm sẽ bị hội đồng thi ra quyết định kỉ luật tùy trường hợp.</h6>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+        

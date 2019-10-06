@@ -1,0 +1,69 @@
+<div class = "body">
+        <div class="tieude">
+            <img src="assets\images\banner.png">
+        </div>
+        <ul class="nav myNavs">
+            <li class="nav-item">
+                <a class="nav-link active" [routerLink]="['/assignment']">Ji Naul Exam Online</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/gioithieu']">Giới thiệu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/lienhe']">Liên hệ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/gopy']">Góp ý</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/hoidap']">Hỏi đáp</a>
+            </li>
+            <div class="input-group mb-3 mySearch">
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Tìm đề thi...">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class='fas fa-search'></i></span>
+                </div>
+            </div>
+            <div class="dropdown dropleft myDropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tài khoản
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" [routerLink]="['/dangki']">Đăng kí</a>
+                    <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng nhập</a>
+                    <a class="dropdown-item" [routerLink]="['/doimatkhau']">Quên mật khẩu</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng xuất</a>
+                    <a class="dropdown-item" [routerLink]="['/doimatkhau']">Đổi mật khẩu</a>
+                    <a class="dropdown-item" [routerLink]="['/taikhoan']">Cập nhập tài khoản</a>
+                </div>
+            </div>
+        </ul>
+        <div class="contrainer">
+                <div class="containerleft">
+                    <div class="top">
+                        <div class="card text-center myCard" *ngFor="let i of danhmucmonhoc | paginate: {itemsPerPage: pagesize, currentPage: pagecurrent}">
+                            <div class="card-body">
+                                <img src={{i.imgScr}} class="myImg">
+                            </div>
+                            <div class="card-footer text-muted">
+                                {{i.name}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <i class='far fa-hand-point-up' style="margin: 0 2% 0 2%; font-size: 150%" (click) = 'home()'></i>
+                        <i class='far fa-hand-point-right' style="margin: 0 2% 0 2%; font-size: 150%" (click) = 'next()'></i>
+                        <i class='far fa-hand-point-down' style="margin: 0 2% 0 2%; font-size: 150%" (click) = 'end()'></i>
+                        <i class='far fa-hand-point-left' style="margin: 0 2% 0 2%; font-size: 150%" (click) = 'previrous()'></i>
+                    </div>
+                </div>
+                    <div class="containerright">
+                        <li class="list-group-item dmmh"><i class='fas fa-th-large'></i>Danh mục môn học</li>
+                        <ul class="list-group click" *ngFor = "let i of danhmucmonhoc">
+                            <a [routerLink]="['/danhmucmonhoc',{namepage: i.name}, i.id]"><li class="list-group-item">{{i.name}}</li></a>
+                        </ul>
+                    </div>
+        </div>
+    </div>
+    

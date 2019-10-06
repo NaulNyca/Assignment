@@ -1,0 +1,106 @@
+<div class = "body">
+    <div class="tieude">
+        <img src="assets\images\banner.png">
+    </div>
+    <ul class="nav myNavs">
+        <li class="nav-item">
+            <a class="nav-link active" [routerLink]="['/assignment']">Ji Naul Exam Online</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/gioithieu']">Giới thiệu</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/lienhe']">Liên hệ</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/gopy']">Góp ý</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/hoidap']">Hỏi đáp</a>
+        </li>
+        <div class="input-group mb-3 mySearch">
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Tìm đề thi...">
+            <div class="input-group-append">
+                <span class="input-group-text"><i class='fas fa-search'></i></span>
+            </div>
+        </div>
+        <div class="dropdown dropleft myDropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Tài khoản
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" [routerLink]="['/dangki']">Đăng kí</a>
+                <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng nhập</a>
+                <a class="dropdown-item" [routerLink]="['/doimatkhau']">Quên mật khẩu</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng xuất</a>
+                <a class="dropdown-item" [routerLink]="['/doimatkhau']">Đổi mật khẩu</a>
+                <a class="dropdown-item" [routerLink]="['/taikhoan']">Cập nhập tài khoản</a>
+            </div>
+        </div>
+    </ul>
+    <div class="contrainer">
+        <div class="containerleft">
+            <div class="top">
+                <div class="card border-success myCard" *ngFor="let i of cauhoi | paginate: {itemsPerPage: pagesize, currentPage: pagecurrent}">
+                    <div class="card-header bg-transparent border-success">{{monhoc.name}}</div>
+                    <div class="card-body text-success">
+                        <p>Câu {{i.id}}: {{i.qes}}</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                {{i.daa}}
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
+                                {{i.dab}}
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
+                                {{i.dac}}
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
+                                {{i.dad}}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent border-success">Marks: {{i.id}}/{{totlepage}}</div>
+                </div>
+            </div>
+            <div class="bottom">
+                <i class='far fa-hand-point-up' style="margin: 0 2% 0 2%; font-size: 150%" (click) = 'home()'></i>
+                <i class='far fa-hand-point-right' style="margin: 0 2% 0 2%; font-size: 150%" (click) = 'next()'></i>
+                <i class='far fa-hand-point-down' style="margin: 0 2% 0 2%; font-size: 150%" (click) = 'end()'></i>
+                <i class='far fa-hand-point-left' style="margin: 0 2% 0 2%; font-size: 150%" (click) = 'previrous()'></i>
+            </div>
+        </div>
+        <div class="containerright myHeader">
+            <div class="accordion myHeader" id="accordionExample">
+                <div class="card myHeader">
+                    <div class="card-header myHeader" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link dmmh" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <i class='fas fa-th-large'></i>Danh mục môn học
+                            </button>
+                        </h2>
+                    </div>                    
+                    <div id="collapseOne" class="collapse myCollapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <ul class="list-group click" *ngFor = "let i of danhmucmonhoc">
+                                <li class="list-group-item">{{i.name}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    

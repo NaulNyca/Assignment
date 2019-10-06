@@ -1,0 +1,138 @@
+<div class="body">
+        <div class="tieude">
+            <img src="assets\images\banner.png">
+        </div>
+        <ul class="nav myNavs">
+            <li class="nav-item">
+                <a class="nav-link active" [routerLink]="['/assignment']">Ji Naul Exam Online</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/gioithieu']">Giới thiệu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/lienhe']">Liên hệ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/gopy']">Góp ý</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/hoidap']">Hỏi đáp</a>
+            </li>
+            <div class="input-group mb-3 mySearch">
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Tìm đề thi...">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class='fas fa-search'></i></span>
+                </div>
+            </div>
+            <div class="dropdown dropleft myDropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tài khoản
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" [routerLink]="['/dangki']">Đăng kí</a>
+                    <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng nhập</a>
+                    <a class="dropdown-item" [routerLink]="['/doimatkhau']">Quên mật khẩu</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng xuất</a>
+                    <a class="dropdown-item" [routerLink]="['/doimatkhau']">Đổi mật khẩu</a>
+                    <a class="dropdown-item" [routerLink]="['/taikhoan']">Cập nhập tài khoản</a>
+                </div>
+            </div>
+        </ul>
+        <div class="thantrang">
+            <div class="container"> 
+                <legend>
+                    <a href="#"><i class="glyphicon glyphicon-globe"></i></a>Thông tin tài khoản
+                </legend> 
+                <form class="form" role="form"> 
+                    <div class="row"> 
+                        <div class="col-xs-6 col-md-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="refirstname" placeholder="Họ" disabled>
+                                <div class="input-group-append myButton" id="button-addon4">
+                                    <button class="btn btn-outline-secondary" type="button"><i class="fa fa-edit"></i></button>
+                                    <button class="btn btn-outline-secondary" type="button" ><i class='fas fa-check'></i></button>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="col-xs-6 col-md-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="relastname" placeholder="Tên" disabled>
+                                <div class="input-group-append myButton" id="button-addon4">
+                                    <button class="btn btn-outline-secondary" type="button"><i class="fa fa-edit"></i></button>
+                                    <button class="btn btn-outline-secondary" type="button"><i class='fas fa-check' ></i></button>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="input-group">
+                            <input class="form-control" name="youremail" placeholder="Email" type="email" id="reemail" disabled>
+                        <div class="input-group-append myButton" id="button-addon4">
+                            <button class="btn btn-outline-secondary" type="button"><i class="fa fa-edit"></i></button>
+                            <button class="btn btn-outline-secondary" type="button"><i class='fas fa-check' ></i></button>
+                        </div>
+                    </div>    
+                    <div class="input-group">
+                        <input class="form-control" name="yournumber" placeholder="Số điện thoại" type="tel" id="renumber" disabled>
+                        <div class="input-group-append myButton" id="button-addon4">
+                            <button class="btn btn-outline-secondary" type="button"><i class="fa fa-edit"></i></button>
+                            <button class="btn btn-outline-secondary" type="button"><i class='fas fa-check' ></i></button>
+                        </div>
+                    </div>   
+                    <div class="input-group">
+                        <input class="form-control" name="password" placeholder="******" type="password" disabled>
+                        <div class="input-group-append myButton" id="button-addon4">
+                            <button class="btn btn-outline-secondary" type="button" [routerLink]="['/doimatkhau']"><i class="fa fa-edit"></i></button>
+                        </div>
+                    </div>        
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="readdress" placeholder="Địa chỉ" disabled>
+                        <div class="input-group-append myButton" id="button-addon4">
+                            <button class="btn btn-outline-secondary" type="button"><i class="fa fa-edit"></i></button>
+                            <button class="btn btn-outline-secondary" type="button"><i class='fas fa-check' ></i></button>
+                        </div>
+                    </div>
+                    <label for=""> Ngày sinh</label> 
+                    <div class="row"> 
+                        <div class="col-xs-3 col-md-3">
+                            <select class="form-control" disabled>              
+                                <option value="Day">Ngày</option>
+                            </select> 
+                        </div> 
+                        <div class="col-xs-3 col-md-3"> 
+                            <select class="form-control" disabled>             
+                                <option value="Month">Tháng</option>            
+                            </select> 
+                        </div> 
+                        <div class="col-xs-3 col-md-3"> 
+                            <select class="form-control" disabled>              
+                                <option value="Year">Năm</option>            
+                            </select> 
+                        </div> 
+                        <div class="col-xs-3 col-md-3"> 
+                            <button class="btn btn-outline-secondary" type="button"><i class="fa fa-edit"></i></button>
+                            <button class="btn btn-outline-secondary" type="button"><i class='fas fa-check'></i></button>
+                        </div> 
+                    </div>
+                    <div class="gioitinh">
+                        <label for="">Giới tính</label> 
+                        <div class="row">
+                            <div class="col-xs-3 col-md-3"> 
+                                <select class="form-control" disabled>              
+                                    <option value="Day" name="sex" id="inlineoption1" value="male">Nam</option>
+                                    <option value="Day" name="sex" id="inlineoption2" value="female">Nữ</option>
+                                    <option value="Day" name="sex" id="inlineoption3" value="none">Không xác định</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-7 col-md-7"> 
+                                <button class="btn btn-outline-secondary" type="button"><i class="fa fa-edit"></i></button>
+                                <button class="btn btn-outline-secondary" type="button"><i class='fas fa-check'></i></button>
+                            </div>
+                        </div>
+                    </div> 
+                <button class="btn btn-lg btn-primary btn-block" type="submit" disabled>Cập nhật</button> 
+                </form>
+            </div>
+        </div>
+    </div>
+    

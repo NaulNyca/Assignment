@@ -1,44 +1,51 @@
 <div class = "body">
-    <div class="tieude">
-        <img src="assets\images\banner.png">
-    </div>
-    <ul class="nav myNavs">
-        <li class="nav-item">
-            <a class="nav-link active" [routerLink]="['/assignment']">Ji Naul Exam Online</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/gioithieu']">Giới thiệu</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/lienhe']">Liên hệ</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/gopy']">Góp ý</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/hoidap']">Hỏi đáp</a>
-        </li>
-        <div class="input-group mb-3 mySearch">
-            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Tìm đề thi...">
-            <div class="input-group-append">
-                <span class="input-group-text"><i class='fas fa-search'></i></span>
+        <div class="tieude">
+            <img src="assets\images\banner.png">
+        </div>
+        <div class="row menu">
+            <div class="col-xs-8 col-md-5">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" [routerLink]="['']">Ji Naul Exam Online</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/gioithieu']">Giới thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/lienhe']">Liên hệ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/gopy']">Góp ý</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/hoidap']">Hỏi đáp</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Tìm đề thi...">
+                    <div class="input-group-append">
+                        <span class="input-group-text"><i class='fas fa-search'></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-2 col-md-2">
+    
+            </div>
+            <div class="col-xs-2 col-md-1">
+                <div class="dropdown dropleft myDropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Tài khoản
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" [routerLink]="['/dangki']">Đăng kí</a>
+                        <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng nhập</a>
+                        <a class="dropdown-item" [routerLink]="['/doimatkhau']">Quên mật khẩu</a>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="dropdown dropleft myDropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Tài khoản
-            </button>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" [routerLink]="['/dangki']">Đăng kí</a>
-                <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng nhập</a>
-                <a class="dropdown-item" [routerLink]="['/doimatkhau']">Quên mật khẩu</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng xuất</a>
-                <a class="dropdown-item" [routerLink]="['/doimatkhau']">Đổi mật khẩu</a>
-                <a class="dropdown-item" [routerLink]="['/taikhoan']">Cập nhập tài khoản</a>
-            </div>
-        </div>
-    </ul>
     <div class="container">
         <form>
             <div class="form-group">

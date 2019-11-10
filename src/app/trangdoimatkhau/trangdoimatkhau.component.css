@@ -6,35 +6,35 @@
     height: 12em;
     margin:  0 0 1em 0;
 }
-.myNavs {
+.menu {
     background-color:bisque;
     height: 2.6em;
+    width: 100%;
+    margin: 0;
 }
-.myDropdown {
-    margin: 0.1em 0 0 13%;
-}
-.myDropdown button {
+.user button {
     color: blue;
     background-color:white;
     border: none;
-    margin: 0.05em 0 0 0;
 }
-.mySearch {
-    width: 46%;
+.user {
+    margin: 0.15em 0 0 0;
+}
+.search {
     margin: 0.1em 0 0 0;
 }
-.mySearch div {
+.search div {
     height: 2.4em;
-}
-.thantrang {  
-    padding-top: 0px;
 }
 .container {
     margin: 1em 0 0 30%;
     width: 40%;
     background-color: beige;
     border-radius: 10px;
-    height: 33em;
+    height: 31.5em;
+}
+.container h1{
+    color: red;
 }
 .form-control { 
     margin-bottom: 10px;
@@ -42,9 +42,6 @@
 .login-screen-bg {  
     background-color: #EFEFEF;
 }
-.gioitinh {
-    margin: 0.5em 0 0.8em 0;
-}
-.gioitinh select{
-    width: 20%;
+.change {
+    width: 100%;
 }

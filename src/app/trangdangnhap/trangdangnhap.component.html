@@ -1,74 +1,106 @@
-<div class="body">      
-    <div class="tieude">
-        <img src="assets\images\banner.png">
-    </div>
-    <ul class="nav myNavs">
-        <li class="nav-item">
-            <a class="nav-link active" [routerLink]="['/assignment']">Ji Naul Exam Online</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/gioithieu']">Giới thiệu</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/lienhe']">Liên hệ</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/gopy']">Góp ý</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/hoidap']">Hỏi đáp</a>
-        </li>
-        <div class="input-group mb-3 mySearch">
-            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Tìm đề thi...">
-            <div class="input-group-append">
-                <span class="input-group-text"><i class='fas fa-search'></i></span>
-            </div>
+<div class = "body">
+        <div class="tieude">
+            <img src="assets\images\banner.png">
         </div>
-        <div class="dropdown dropleft myDropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Tài khoản
-            </button>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" [routerLink]="['/dangki']">Đăng kí</a>
-                <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng nhập</a>
-                <a class="dropdown-item" [routerLink]="['/doimatkhau']">Quên mật khẩu</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng xuất</a>
-                <a class="dropdown-item" [routerLink]="['/doimatkhau']">Đổi mật khẩu</a>
-                <a class="dropdown-item" [routerLink]="['/taikhoan']">Cập nhập tài khoản</a>
+        <div class="row menu">
+            <div class="col-xs-8 col-md-5">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" [routerLink]="['']">Ji Naul Exam Online</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/gioithieu']">Giới thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/lienhe']">Liên hệ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/gopy']">Góp ý</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/hoidap']">Hỏi đáp</a>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </ul>
-    <div class="thantrang">
-        <div class="container"> 
-            <legend>
-                <a href="#"><i class="glyphicon glyphicon-globe"></i></a> Đăng nhập để nhận thông báo sớm nhất về các bài kiểm tra và thi!
-            </legend> 
-            <form class="form" role="form"> 
-                <input class="form-control" name="account" placeholder="Nhập email hoặc số điện thoại" type="text">
-                <input class="form-control" name="password" placeholder="Mật khẩu" type="password">
-                <div class="tucach">
-                    <label for="">Đăng nhập với tư cách: </label> 
-                    <select class="form-control">              
-                        <option value="Day" name="sex" id="inlineoption1" value="male">Sinh viên</option>
-                        <option value="Day" name="sex" id="inlineoption2" value="female">Giáo viên</option>
-                        <option value="Day" name="sex" id="inlineoption3" value="none">Ban giám hiệu</option>
-                    </select> 
-                </div> 
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Nhớ tôi</label>
+            <div class="col-xs-6 col-md-4">
+                <div class="input-group search">
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Tìm đề thi...">
+                    <div class="input-group-append">
+                        <span class="input-group-text"><i class='fas fa-search'></i></span>
+                    </div>
                 </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit" [routerLink]="['/danhmucmonhoc']">Đăng nhập</button> 
-            <div class="luuy">
-                <h5>Lưu ý để tránh trường hợp thi hộ:</h5>
-                <h6>- Sinh viên không được sử dụng các phần mền kết nối máy tính, truy cập hỗ trợ từ xa. Chương trình sẽ thực hiện các quyền kiểm soát để kiểm tra máy tính có lỗi vi phạm hay không.
-                <br>- Hội đồng thi sẽ lấy dữ liệu webcam từ máy tính của bạn.
-                <br>- Sinh viên vui lòng chấp nhận các yêu cầu từ trang web để có thể vào phòng thi dễ dàng.
-                <br>- Nếu phát hiện trường hợp vi phạm sẽ bị hội đồng thi ra quyết định kỉ luật tùy trường hợp.</h6>
             </div>
-            </form>
+            <div class="col-xs-2 col-md-2">
+    
+            </div>
+            <div class="col-xs-2 col-md-1">
+                <div class="dropdown dropleft user">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Tài khoản
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" [routerLink]="['/dangki']">Đăng kí</a>
+                        <a class="dropdown-item" [routerLink]="['/doimatkhau']">Quên mật khẩu</a>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="container"> 
+            <h1>Đăng nhập vào tài khoản:</h1>
+            <form class="form" role="form"> 
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nhập tên tài khoản:</label>
+                    <input class="form-control" name="account" placeholder="User name" type="text" [(ngModel)]="taikhoan" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nhập mật khẩu:</label>
+                    <input class="form-control" name="password" placeholder="Password" type="password" [(ngModel)]="matkhau" [ngModelOptions]="{standalone: true}">
+                </div>
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary signin" data-toggle="modal" data-target="#exampleModal" (click) = 'dangnhap()'>
+                        Đăng nhập
+                </button>
+      
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf = "show">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Đăng nhập thành công</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Xin chào {{fullname}}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" [routerLink]="['/danhmucmonhoc']" data-dismiss="modal">Tiếp tục</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf = "!show">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Đăng nhập thất bại</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Sai tên tài khoản hoặc mật khẩu!
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Đăng nhập lại</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
     </div>
 </div>
         

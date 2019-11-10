@@ -1,72 +1,97 @@
-<div class="body">
+<div class = "body">
     <div class="tieude">
         <img src="assets\images\banner.png">
     </div>
-    <ul class="nav myNavs">
-        <li class="nav-item">
-            <a class="nav-link active" [routerLink]="['/assignment']">Ji Naul Exam Online</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/gioithieu']">Giới thiệu</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/lienhe']">Liên hệ</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/gopy']">Góp ý</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/hoidap']">Hỏi đáp</a>
-        </li>
-        <div class="input-group mb-3 mySearch">
-            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Tìm đề thi...">
-            <div class="input-group-append">
-                <span class="input-group-text"><i class='fas fa-search'></i></span>
+    <div class="row menu">
+        <div class="col-xs-8 col-md-5">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" [routerLink]="['']">Ji Naul Exam Online</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/gioithieu']">Giới thiệu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/lienhe']">Liên hệ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/gopy']">Góp ý</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/hoidap']">Hỏi đáp</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <div class="input-group search">
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Tìm đề thi...">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class='fas fa-search'></i></span>
+                </div>
             </div>
         </div>
-        <div class="dropdown dropleft myDropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Tài khoản
+        <div class="col-xs-2 col-md-2">
+
+        </div>
+        <div class="col-xs-2 col-md-1">
+            <div class="dropdown dropleft user">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tài khoản
+                </button>
+                <div class="dropdown-menu">
+                        <a class="dropdown-item" [routerLink]="['/dangki']">Đăng kí</a>
+                        <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng nhập</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container"> 
+        <h1>Đổi mật khẩu: </h1>
+        <form class="form" role="form">
+            <div class="form-group">
+                <label for="exampleInputAccount">Email của bạn:</label>
+                <input type="text" class="form-control" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label for="inputOldPassword">Tên tài khoản: </label>
+                <input type="text" class="form-control" [(ngModel)]="username" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label for="inputReNewPassword">Mật khẩu mới:</label>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputReNewPassword">Nhập lại mật khẩu mới:</label>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" [(ngModel)]="repassword" [ngModelOptions]="{standalone: true}">
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary change" data-toggle="modal" data-target="#exampleModal" (click) = 'thaydoi()'>
+                Thay đổi
             </button>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" [routerLink]="['/dangki']">Đăng kí</a>
-                <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng nhập</a>
-                <a class="dropdown-item" [routerLink]="['/doimatkhau']">Quên mật khẩu</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng xuất</a>
-                <a class="dropdown-item" [routerLink]="['/doimatkhau']">Đổi mật khẩu</a>
-                <a class="dropdown-item" [routerLink]="['/taikhoan']">Cập nhập tài khoản</a>
+    
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf = "show">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Đổi mật khẩu thành công.</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Vui lòng đăng nhập lại sau khi đổi mật khẩu thành công.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" [routerLink]="['/dangnhap']" data-dismiss="modal">Tiếp tục</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </ul>
-    <div class="thantrang">
-        <div class="container"> 
-            <legend>
-                <a href="#"><i class="glyphicon glyphicon-globe"></i></a> Vui lòng ghi nhớ mật khẩu để đăng nhập vào tài khoản cho các lần sau.
-            </legend> 
-            <form class="form" role="form">
-                <div class="form-group">
-                    <label for="exampleInputAccount">Nhập lại email hoặc số điện thoại của bạn</label>
-                    <input type="text" class="form-control" id="reaccount">
-                </div>
-                <div class="form-group">
-                    <label for="inputOldPassword">Mật khẩu cũ</label>
-                    <input type="password" class="form-control" id="oldpassword">
-                </div>
-                <div class="form-group">
-                    <label for="inputNewPassword">Mật khẩu mới</label>
-                    <input type="password" class="form-control" id="newpassword">
-                </div>
-                <div class="form-group">
-                    <label for="inputReNewPassword">Nhập lại mật khẩu mới</label>
-                    <input type="password" class="form-control" id="renewpassword">
-                </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Đăng xuất khỏi các thiết bị.</label>
-                </div>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Thay đổi</button> 
-            </form>
-        </div>
+        </form>
     </div>
 </div>

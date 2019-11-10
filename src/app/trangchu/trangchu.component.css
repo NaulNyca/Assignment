@@ -6,21 +6,21 @@
     height: 12em;
     margin:  0 0 1em 0;
 }
-.myNavs {
+.menu {
     background-color:bisque;
     height: 2.6em;
+    width: 100%;
+    margin: 0;
 }
-.myDropdown {
-    margin: 0.1em 0 0 13%;
-}
-.myDropdown button {
+.user button {
     color: blue;
     background-color:white;
     border: none;
-    margin: 0.05em 0 0 0;
 }
-.mySearch {
-    width: 46%;
+.search {
+    margin: 0.1em 0 0 0;
+}
+.user {
     margin: 0.1em 0 0 0;
 }
 .myCard {

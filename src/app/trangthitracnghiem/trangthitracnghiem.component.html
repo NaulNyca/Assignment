@@ -1,84 +1,126 @@
 <div class = "body">
-    <div class="tieude">
-        <img src="assets\images\banner.png">
-    </div>
-    <ul class="nav myNavs">
-        <li class="nav-item">
-            <a class="nav-link active" [routerLink]="['/assignment']">Ji Naul Exam Online</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/gioithieu']">Giới thiệu</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/lienhe']">Liên hệ</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/gopy']">Góp ý</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/hoidap']">Hỏi đáp</a>
-        </li>
-        <div class="input-group mb-3 mySearch">
-            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Tìm đề thi...">
-            <div class="input-group-append">
-                <span class="input-group-text"><i class='fas fa-search'></i></span>
+        <div class="tieude">
+            <img src="assets\images\banner.png">
+        </div>
+        <div class="row menu">
+            <div class="col-xs-8 col-md-5">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" [routerLink]="['']">Ji Naul Exam Online</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/gioithieu']">Giới thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/lienhe']">Liên hệ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/gopy']">Góp ý</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/hoidap']">Hỏi đáp</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <div class="input-group search">
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Tìm đề thi...">
+                    <div class="input-group-append">
+                        <span class="input-group-text"><i class='fas fa-search'></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-2 col-md-2">
+    
+            </div>
+            <div class="col-xs-2 col-md-1">
+                <div class="dropdown dropleft user">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Tài khoản
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" [routerLink]="['/taikhoan']">Cập nhật tài khoản</a>
+                        <a class="dropdown-item" [routerLink]="['/doimatkhau']">Quên mật khẩu</a>
+                        <a class="dropdown-item" [routerLink]="['/dangnhap']" (click) = 'dangxuat()'>Đăng xuất</a>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="dropdown dropleft myDropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Tài khoản
-            </button>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" [routerLink]="['/dangki']">Đăng kí</a>
-                <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng nhập</a>
-                <a class="dropdown-item" [routerLink]="['/doimatkhau']">Quên mật khẩu</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng xuất</a>
-                <a class="dropdown-item" [routerLink]="['/doimatkhau']">Đổi mật khẩu</a>
-                <a class="dropdown-item" [routerLink]="['/taikhoan']">Cập nhập tài khoản</a>
-            </div>
-        </div>
-    </ul>
     <div class="contrainer">
         <div class="containerleft">
             <div class="top">
-                <div class="card border-success myCard" *ngFor="let i of cauhoi | paginate: {itemsPerPage: pagesize, currentPage: pagecurrent}">
-                    <div class="card-header bg-transparent border-success">{{monhoc.name}}</div>
-                    <div class="card-body text-success">
-                        <p>Câu {{i.id}}: {{i.qes}}</p>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                            <label class="form-check-label" for="exampleRadios1">
-                                {{i.daa}}
-                            </label>
+                    <div class="card border-success myCard" *ngIf = "showthi">
+                            <div class="card-header bg-transparent border-success">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <h4>Môn học: {{subjectname}}</h4>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <h4 style="text-align: right;">Thời gian: 30 phút</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <a class="btn btn-primary" style="margin-top: 3em; font-size: 150%;" (click) = 'batdau()'>Bắt đầu thi</a>
+                            </div>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                            <label class="form-check-label" for="exampleRadios1">
-                                {{i.dab}}
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                            <label class="form-check-label" for="exampleRadios1">
-                                {{i.dac}}
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                            <label class="form-check-label" for="exampleRadios1">
-                                {{i.dad}}
-                            </label>
-                        </div>
-                    </div>
-                    <div class="card-footer bg-transparent border-success">Marks: {{i.id}}/{{totlepage}}</div>
-                </div>
-            </div>
-            <div class="bottom">
-                <i class='far fa-hand-point-up' style="margin: 0 2% 0 2%; font-size: 150%" (click) = 'home()'></i>
-                <i class='far fa-hand-point-right' style="margin: 0 2% 0 2%; font-size: 150%" (click) = 'next()'></i>
-                <i class='far fa-hand-point-down' style="margin: 0 2% 0 2%; font-size: 150%" (click) = 'end()'></i>
-                <i class='far fa-hand-point-left' style="margin: 0 2% 0 2%; font-size: 150%" (click) = 'previrous()'></i>
+
+
+
+                        <div class="card border-success myCard" *ngIf = "!showthi">
+                                <div class="card-header bg-transparent border-success">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <h4>Môn học: {{subjectname}}</h4>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <h4 style="text-align: right;">Thời gian còn lại: 29:59</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body text-success myCardBody" *ngFor="let i of Quiz | paginate: {itemsPerPage: pagesize, currentPage: pagecurrent}">
+                                    <p>Câu {{pagecurrent}}: {{i.Text}}</p>
+                                    <div class="form-check" *ngFor = 'let j of i.Answers'>
+                                        <input class="form-check-input" type="radio" name={{i.Id}} value={{j.Id}} [(ngModel)]="task.Ans[pagecurrent -1]" [ngModelOptions]="{standalone: true}">
+                                        <label class="form-check-label" for="exampleRadios1">
+                                            {{j.Text}}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-success text-center">
+                                    <div class="bottom">
+                                        <i class='far fa-hand-point-up' style="font-size: 150%" (click) = 'home()' *ngIf = "showfirth"></i>
+                                        <i class='far fa-hand-point-right' style="font-size: 150%" (click) = 'next()' *ngIf = "showend"></i>
+                                        <i class='far fa-hand-point-down' style="font-size: 150%" (click) = 'end()' *ngIf = "showlast"></i>
+                                        <i class='far fa-hand-point-left' style="font-size: 150%" (click) = 'previrous()' *ngIf = "showbegin"></i>
+            
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click) = 'finish()' *ngIf = 'showfinish'>
+                                            Hoàn thành
+                                        </button>
+                            
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf = "show">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Hoàn thành bài thi</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Điểm của bạn là: {{mark}}
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-primary" data-dismiss="modal" [routerLink]="['/xemlai']">Xem lại bài thi</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                    </div>
+                                </div>
+                            </div>
             </div>
         </div>
         <div class="containerright myHeader">
@@ -93,8 +135,8 @@
                     </div>                    
                     <div id="collapseOne" class="collapse myCollapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="card-body">
-                            <ul class="list-group click" *ngFor = "let i of danhmucmonhoc">
-                                <li class="list-group-item">{{i.name}}</li>
+                            <ul class="list-group" *ngFor = "let i of danhmucmonhoc">
+                                <a [routerLink]="['/danhmucmonhoc', i.Id]" (click) = 'thi()'><li class="list-group-item">{{i.Name}}</li></a>
                             </ul>
                         </div>
                     </div>

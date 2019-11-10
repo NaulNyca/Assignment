@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {RouterModule} from '@angular/router';
-import {NgxPaginationModule} from 'ngx-pagination';
-import {FormsModule} from '@angular/forms';
+import { RouterModule} from '@angular/router';
+import { NgxPaginationModule} from 'ngx-pagination';
+import { FormsModule} from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TrangchuComponent } from './trangchu/trangchu.component';
@@ -16,6 +17,7 @@ import { TrangdoimatkhauComponent } from './trangdoimatkhau/trangdoimatkhau.comp
 import { TrangsuadoitaikhoanComponent } from './trangsuadoitaikhoan/trangsuadoitaikhoan.component';
 import { TrangdanhmucmonhocComponent } from './trangdanhmucmonhoc/trangdanhmucmonhoc.component';
 import { TrangthitracnghiemComponent } from './trangthitracnghiem/trangthitracnghiem.component';
+import { TrangxemlaibaithiComponent } from './trangxemlaibaithi/trangxemlaibaithi.component';
 
 @NgModule({
   declarations: [
@@ -31,11 +33,13 @@ import { TrangthitracnghiemComponent } from './trangthitracnghiem/trangthitracng
     TrangsuadoitaikhoanComponent,
     TrangdanhmucmonhocComponent,
     TrangthitracnghiemComponent,
+    TrangxemlaibaithiComponent,
   ],
   imports: [
     BrowserModule,
     NgxPaginationModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([ 
       { path: '', 	component: TrangchuComponent}, 
       { path: 'dangki', 	component: TrangdangkiComponent},
@@ -46,8 +50,9 @@ import { TrangthitracnghiemComponent } from './trangthitracnghiem/trangthitracng
       { path: 'gioithieu', 	component: TranggioithieuComponent},
       { path: 'gopy', 	component: TranggopyComponent},
       { path: 'danhmucmonhoc', 	component: TrangdanhmucmonhocComponent},
-      { path: 'danhmucmonhoc/:i.id', 	component: TrangthitracnghiemComponent},
+      { path: 'danhmucmonhoc/:Id', 	component: TrangthitracnghiemComponent},
       { path: 'hoidap', 	component: TranghoidapComponent},
+      { path: 'xemlai', 	component: TrangxemlaibaithiComponent},
      
     ])
   ],

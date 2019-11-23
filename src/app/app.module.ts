@@ -6,7 +6,6 @@ import { FormsModule} from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { TrangchuComponent } from './trangchu/trangchu.component';
 import { TranggioithieuComponent } from './tranggioithieu/tranggioithieu.component';
 import { TranglienheComponent } from './tranglienhe/tranglienhe.component';
 import { TranggopyComponent } from './tranggopy/tranggopy.component';
@@ -18,11 +17,11 @@ import { TrangsuadoitaikhoanComponent } from './trangsuadoitaikhoan/trangsuadoit
 import { TrangdanhmucmonhocComponent } from './trangdanhmucmonhoc/trangdanhmucmonhoc.component';
 import { TrangthitracnghiemComponent } from './trangthitracnghiem/trangthitracnghiem.component';
 import { TrangxemlaibaithiComponent } from './trangxemlaibaithi/trangxemlaibaithi.component';
+import { TrangquenmatkhauComponent } from './trangquenmatkhau/trangquenmatkhau.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TrangchuComponent,
     TranggioithieuComponent,
     TranglienheComponent,
     TranggopyComponent,
@@ -34,6 +33,7 @@ import { TrangxemlaibaithiComponent } from './trangxemlaibaithi/trangxemlaibaith
     TrangdanhmucmonhocComponent,
     TrangthitracnghiemComponent,
     TrangxemlaibaithiComponent,
+    TrangquenmatkhauComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +41,7 @@ import { TrangxemlaibaithiComponent } from './trangxemlaibaithi/trangxemlaibaith
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([ 
-      { path: '', 	component: TrangchuComponent}, 
+      { path: '', 	component: TrangdanhmucmonhocComponent}, 
       { path: 'dangki', 	component: TrangdangkiComponent},
       { path: 'dangnhap', 	component: TrangdangnhapComponent},
       { path: 'doimatkhau', 	component: TrangdoimatkhauComponent},
@@ -49,6 +49,7 @@ import { TrangxemlaibaithiComponent } from './trangxemlaibaithi/trangxemlaibaith
       { path: 'lienhe', 	component: TranglienheComponent},
       { path: 'gioithieu', 	component: TranggioithieuComponent},
       { path: 'gopy', 	component: TranggopyComponent},
+      { path: 'quenmatkhau', 	component: TrangquenmatkhauComponent},
       { path: 'danhmucmonhoc', 	component: TrangdanhmucmonhocComponent},
       { path: 'danhmucmonhoc/:Id', 	component: TrangthitracnghiemComponent},
       { path: 'hoidap', 	component: TranghoidapComponent},

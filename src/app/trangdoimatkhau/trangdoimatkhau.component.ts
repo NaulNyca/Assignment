@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./trangdoimatkhau.component.css']
 })
 export class TrangdoimatkhauComponent implements OnInit {
+  
   Student = JSON.parse(localStorage.getItem('user'));
   task = JSON.parse(localStorage.getItem('task'));
-
   Students = JSON.parse(localStorage.getItem('listuser'));
   email = "";
   username = "";
@@ -17,18 +17,19 @@ export class TrangdoimatkhauComponent implements OnInit {
   check1 = false;
   check2 = false;
   show = false;
+  showsubject = false;
 
   constructor() { 
   }
 
   ngOnInit() {
-    this.Student = null;
-    this.task = {
-      "IdSubject": "",
-      Ans: [],
+    if(this.Student.length === 0) {
+      this.showsubject = false;
+      document.getElementById('user').innerHTML = "Tài Khoản"
     }
-    localStorage.setItem('user', JSON.stringify(this.Student));
-    localStorage.setItem('task', JSON.stringify(this.task));
+    else {
+      this.showsubject = true;
+    }
   }
 
   thaydoi() {
@@ -54,5 +55,14 @@ export class TrangdoimatkhauComponent implements OnInit {
     else {
       alert('Mật khẩu phải từ 8 kí tự trở lên.');
     }
+  }
+  dangxuat() {
+    this.Student = [];
+    this.task = {
+      "IdSubject": "",
+      Ans: [],
+    }
+    localStorage.setItem('user', JSON.stringify(this.Student));
+    localStorage.setItem('task', JSON.stringify(this.task));
   }
 }

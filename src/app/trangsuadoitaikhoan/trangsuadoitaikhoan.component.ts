@@ -19,6 +19,7 @@ export class TrangsuadoitaikhoanComponent implements OnInit {
   showgenderbutton = true;
   showgender = true;
   xemlai = false;
+  showsubject = false;
 
   constructor() { }
 
@@ -26,6 +27,13 @@ export class TrangsuadoitaikhoanComponent implements OnInit {
     this.xemlai = false;
     if(this.task.IdSubject === "") {
       this.xemlai = true;
+    }
+    if(this.Student.length === 0) {
+      this.showsubject = false;
+      document.getElementById('user').innerHTML = "Tài Khoản";
+    }
+    else {
+      this.showsubject = true;
     }
   }
 
@@ -96,7 +104,7 @@ export class TrangsuadoitaikhoanComponent implements OnInit {
     alert("Bạn chưa làm bài thi nào.")
   }
   dangxuat() {
-    this.Student = null;
+    this.Student = [];
     this.task = {
       "IdSubject": "",
       Ans: [],

@@ -31,11 +31,19 @@ export class TrangthitracnghiemComponent implements OnInit {
   show = false;
   subjectname;
   showthi = true;
+  showsubject = false;
 
   constructor(private http:HttpClient) { }
   
   ngOnInit() {
     this.thi();
+    if(this.Student.length === 0) {
+      this.showsubject = false;
+      document.getElementById('user').innerHTML = "Tài Khoản";
+    }
+    else {
+      this.showsubject = true;
+    }
   }
   getAllQuiz () {
     return this.http.get(this.urlquiz);
@@ -143,16 +151,44 @@ export class TrangthitracnghiemComponent implements OnInit {
       });
     });
   }
-  batdau() {
-    this.showthi = false;
-  }
   dangxuat() {
-    this.Student = null;
+    this.Student = [];
     this.task = {
       "IdSubject": "",
       Ans: [],
     }
     localStorage.setItem('user', JSON.stringify(this.Student));
     localStorage.setItem('task', JSON.stringify(this.task));
+  }
+  h = 1;
+  m = 30
+  s = 1;
+  timeout = null;
+  start() {
+    this.showthi = false;
+    if (this.s === -1){
+      this.m -= 1;
+      this.s = 59;
+    }
+    
+    if (this.m === -1){
+      this.h -= 1;
+      this.m = 59;
+    }
+
+    if (this.h == -1){
+        clearTimeout(this.timeout);
+        alert('Hết giờ');
+        return false;
+    }
+
+    document.getElementById('gio').innerText = this.h.toString()
+    document.getElementById('phut').innerText = this.m.toString();
+    document.getElementById('giay').innerText = this.s.toString();
+
+    this.timeout = setTimeout(function(){
+      this.s--;
+      this.start();
+    }, 1000);
   }
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
+import { IfStmt } from '@angular/compiler';
+import { Alert } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-trangdanhmucmonhoc',
@@ -15,15 +17,23 @@ export class TrangdanhmucmonhocComponent implements OnInit {
   name : string = 'name';
   Student = JSON.parse(localStorage.getItem('user'));
   task = JSON.parse(localStorage.getItem('task'));
-
+  showsubject = false;
   
   constructor(private http:HttpClient) { 
+    console.log(this.Student)
   }
 
   ngOnInit() {
     this.getAll().subscribe (data=>{
       this.danhmucmonhoc=data;
       this.totlepage = Math.ceil(this.danhmucmonhoc.length/this.pagesize);
+      if(this.Student.length === 0) {
+        this.showsubject = false;
+        document.getElementById('user').innerHTML = "Tài Khoản"
+      }
+      else {
+        this.showsubject = true;
+      }
     });
   }
 
@@ -52,12 +62,17 @@ export class TrangdanhmucmonhocComponent implements OnInit {
   }
 
   dangxuat() {
-    this.Student = null;
+    this.Student = [];
     this.task = {
       "IdSubject": "",
       Ans: [],
     }
     localStorage.setItem('user', JSON.stringify(this.Student));
     localStorage.setItem('task', JSON.stringify(this.task));
+  }
+  yeucandangnhap() {
+    if(this.Student.length === 0) {
+      alert("Bạn chưa đăng nhập! Hãy đăng nhập để được vào làm bài thi!");
+    }
   }
 }

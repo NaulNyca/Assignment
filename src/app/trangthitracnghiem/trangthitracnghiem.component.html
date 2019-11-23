@@ -35,14 +35,17 @@
             </div>
             <div class="col-xs-2 col-md-1">
                 <div class="dropdown dropleft user">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Tài khoản
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" [routerLink]="['/taikhoan']">Cập nhật tài khoản</a>
-                        <a class="dropdown-item" [routerLink]="['/doimatkhau']">Quên mật khẩu</a>
-                        <a class="dropdown-item" [routerLink]="['/dangnhap']" (click) = 'dangxuat()'>Đăng xuất</a>
-                    </div>
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{Student.username}}
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" [routerLink]="['/dangnhap']" *ngIf = "!showsubject">Đăng nhập</a>
+                                <a class="dropdown-item" [routerLink]="['/dangki']" *ngIf = "!showsubject">Đăng kí</a>
+                                <a class="dropdown-item" [routerLink]="['/taikhoan']"  *ngIf = "showsubject">Cập nhật tài khoản</a>
+                                <a class="dropdown-item" [routerLink]="['/quenmatkhau']">Quên mật khẩu</a>
+                                <a class="dropdown-item" [routerLink]="['/doimatkhau']">Đổi mật khẩu</a>
+                                <a class="dropdown-item" [routerLink]="['/dangnhap']" (click) = 'dangxuat()' *ngIf = "showsubject">Đăng xuất</a>
+                            </div>
                 </div>
             </div>
         </div>
@@ -61,7 +64,7 @@
                                 </div>
                             </div>
                             <div class="card-body text-center">
-                                <a class="btn btn-primary" style="margin-top: 3em; font-size: 150%;" (click) = 'batdau()'>Bắt đầu thi</a>
+                                <a class="btn btn-primary" style="margin-top: 3em; font-size: 150%;" (click) = 'start()'>Bắt đầu thi</a>
                             </div>
                         </div>
 
@@ -74,7 +77,13 @@
                                             <h4>Môn học: {{subjectname}}</h4>
                                         </div>
                                         <div class="col-sm-6">
-                                            <h4 style="text-align: right;">Thời gian còn lại: 29:59</h4>
+                                            <h4 style="text-align: right;">Thời gian còn lại:
+                                                <div>
+                                                    <span id="h" name ="gio">Giờ</span> :
+                                                    <span id="m">Phút</span> :
+                                                    <span id="s">Giây</span>
+                                                </div>
+                                            </h4>
                                         </div>
                                     </div>
                                 </div>

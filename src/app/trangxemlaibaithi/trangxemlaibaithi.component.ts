@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
+import { IfStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-trangxemlaibaithi',
@@ -23,15 +24,26 @@ export class TrangxemlaibaithiComponent implements OnInit {
   task = JSON.parse(localStorage.getItem('task'));
   Students = JSON.parse(localStorage.getItem('listuser'));
   Student = JSON.parse(localStorage.getItem('user'));
-
+  showsubject = false;
   show = false;
+  showanswer = false;
 
   constructor(private http:HttpClient) { }
   
   ngOnInit() {
     this.xemlai();
+    if(this.Student.length === 0) {
+      this.showsubject = false;
+      document.getElementById('user').innerHTML = "Tài Khoản";
+    }
+    else {
+      this.showsubject = true;
+    }
   }
+  
+  
   getAllQuiz () {
+    console.log(this.ans);
     return this.http.get(this.urlquiz);
   }
   getAll () {
@@ -104,7 +116,7 @@ export class TrangxemlaibaithiComponent implements OnInit {
     });
   }
   dangxuat() {
-    this.Student = null;
+    this.Student = [];
     this.task = {
       "IdSubject": "",
       Ans: [],

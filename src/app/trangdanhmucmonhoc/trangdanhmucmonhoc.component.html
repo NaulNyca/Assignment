@@ -35,13 +35,16 @@
         </div>
         <div class="col-xs-2 col-md-1">
             <div class="dropdown dropleft user">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{Student.username}}
                 </button>
                 <div class="dropdown-menu">
-                        <a class="dropdown-item" [routerLink]="['/taikhoan']">Cập nhật tài khoản</a>
-                    <a class="dropdown-item" [routerLink]="['/doimatkhau']">Quên mật khẩu</a>
-                    <a class="dropdown-item" [routerLink]="['/dangnhap']" (click) = 'dangxuat()'>Đăng xuất</a>
+                    <a class="dropdown-item" [routerLink]="['/dangnhap']" *ngIf = "!showsubject">Đăng nhập</a>
+                    <a class="dropdown-item" [routerLink]="['/dangki']" *ngIf = "!showsubject">Đăng kí</a>
+                    <a class="dropdown-item" [routerLink]="['/taikhoan']"  *ngIf = "showsubject">Cập nhật tài khoản</a>
+                    <a class="dropdown-item" [routerLink]="['/quenmatkhau']">Quên mật khẩu</a>
+                    <a class="dropdown-item" [routerLink]="['/doimatkhau']">Đổi mật khẩu</a>
+                    <a class="dropdown-item" [routerLink]="['/dangnhap']" (click) = 'dangxuat()' *ngIf = "showsubject">Đăng xuất</a>
                 </div>
             </div>
         </div>
@@ -54,7 +57,8 @@
                         <img src={{i.Logo}} class="myImg">
                     </div>
                     <div class="card-footer text-muted">
-                        <a [routerLink]="['/danhmucmonhoc', i.Id]">{{i.Name}}</a>
+                        <a [routerLink]="['/danhmucmonhoc', i.Id]" *ngIf = "showsubject">{{i.Name}}</a>
+                        <a [routerLink]="['/dangnhap']" *ngIf = "!showsubject" (click) = 'yeucandangnhap()'>{{i.Name}}</a>
                     </div>
                 </div>
             </div>
@@ -68,7 +72,8 @@
         <div class="containerright">
             <li class="list-group-item dmmh"><i class='fas fa-th-large'></i>Danh mục môn học</li>
             <ul class="list-group" *ngFor = "let i of danhmucmonhoc">
-                <a [routerLink]="['/danhmucmonhoc', i.Id]"><li class="list-group-item">{{i.Name}}</li></a>
+                <a [routerLink]="['/danhmucmonhoc', i.Id]"><li class="list-group-item" *ngIf = "showsubject">{{i.Name}}</li></a>
+                <a [routerLink]="['/dangnhap']" *ngIf = "!showsubject"><li class="list-group-item" (click) = 'yeucandangnhap()'>{{i.Name}}</li></a>
             </ul>
         </div>
     </div>

@@ -50,61 +50,42 @@
             </div>
         </div>
         <div class="container"> 
-            <h1>Đăng nhập vào tài khoản:</h1>
-            <form class="form" role="form"> 
+            <h1>Quên mật khẩu: </h1>
+            <form class="form" role="form">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Nhập tên tài khoản:</label>
-                    <input class="form-control" name="account" placeholder="User name" type="text" [(ngModel)]="taikhoan" [ngModelOptions]="{standalone: true}">
+                    <label for="exampleInputAccount">Email của bạn:</label>
+                    <input type="text" class="form-control" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Nhập mật khẩu:</label>
-                    <input class="form-control" name="password" placeholder="Password" type="password" [(ngModel)]="matkhau" [ngModelOptions]="{standalone: true}">
+                    <label for="inputOldPassword">Tên tài khoản: </label>
+                    <input type="text" class="form-control" [(ngModel)]="username" [ngModelOptions]="{standalone: true}">
                 </div>
-
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary signin" data-toggle="modal" data-target="#exampleModal" (click) = 'dangnhap()'>
-                        Đăng nhập
+    
+                <button type="button" class="btn btn-primary change" data-toggle="modal" data-target="#exampleModal" (click) = 'hienmatkhau()'>
+                    Chấp nhận
                 </button>
-      
+        
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf = "show">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Đăng nhập thành công</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Vui lòng ghi nhớ mật khẩu này của bạn!</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                Xin chào {{fullname}}
+                                Mật khẩu của bạn là {{password}}
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" [routerLink]="['/danhmucmonhoc']" data-dismiss="modal">Tiếp tục</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf = "!show">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Đăng nhập thất bại</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Sai tên tài khoản hoặc mật khẩu!
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Đăng nhập lại</button>
+                                <button type="button" class="btn btn-primary" (click)  = 'back()' data-dismiss="modal">Quay về trang trước</button>
+                                <button type="button" class="btn btn-primary" [routerLink]="['/dangnhap']" data-dismiss="modal">Chuyển sang trang đăng nhập</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </form>
+        </div>
     </div>
-</div>
-        
+    

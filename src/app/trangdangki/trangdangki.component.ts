@@ -19,15 +19,22 @@ export class TrangdangkiComponent implements OnInit {
   }
   password = "";
   repassword;
-
   Students = JSON.parse(localStorage.getItem('listuser'));
-
+  Student = JSON.parse(localStorage.getItem('user'));
+  showsubject = false;
   show = false;
 
   constructor() { 
   }
 
   ngOnInit() {
+    if(this.Student.length === 0) {
+      this.showsubject = false;
+      document.getElementById('user').innerHTML = "Tài Khoản";
+    }
+    else {
+      this.showsubject = true;
+    }
   }
 
   dangki() {

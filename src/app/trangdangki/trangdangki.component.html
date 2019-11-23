@@ -35,13 +35,16 @@
             </div>
             <div class="col-xs-2 col-md-1">
                 <div class="dropdown dropleft user">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Tài khoản
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{Student.username}}
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" [routerLink]="['/dangnhap']">Đăng nhập</a>
-                        <a class="dropdown-item" [routerLink]="['/doimatkhau']">Quên mật khẩu</a>
-                    </div>
+                        <a class="dropdown-item" [routerLink]="['/dangnhap']" *ngIf = "!showsubject">Đăng nhập</a>
+                        <a class="dropdown-item" [routerLink]="['/dangki']" *ngIf = "!showsubject">Đăng kí</a>
+                        <a class="dropdown-item" [routerLink]="['/taikhoan']"  *ngIf = "showsubject">Cập nhật tài khoản</a>
+                        <a class="dropdown-item" [routerLink]="['/quenmatkhau']">Quên mật khẩu</a>
+                        <a class="dropdown-item" [routerLink]="['/doimatkhau']">Đổi mật khẩu</a>
+                        <a class="dropdown-item" [routerLink]="['/dangnhap']" (click) = 'dangxuat()' *ngIf = "showsubject">Đăng xuất</a>
                 </div>
             </div>
         </div>

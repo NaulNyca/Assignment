@@ -11,13 +11,22 @@ export class TrangdangnhapComponent implements OnInit {
   taikhoan: any;
   matkhau: any;
   Students = JSON.parse(localStorage.getItem('listuser'));
+  Student = JSON.parse(localStorage.getItem('user'));
   show = false;
   fullname: any;
+  showsubject = false;
 
   constructor(private http:HttpClient) {
   }
 
   ngOnInit() {
+    if(this.Student.length === 0) {
+      this.showsubject = false;
+      document.getElementById('user').innerHTML = "Tài Khoản";
+    }
+    else {
+      this.showsubject = true;
+    }
   }
 
   dangnhap() {

@@ -50,7 +50,11 @@ export class TrangdangkiComponent implements OnInit {
                     alert('Tên tài khoản đã tồn tại');
                     return 0;
                   }
-                  this.show = true;
+                  else {
+                    this.Adduser();
+                    this.show = true;
+                    return 0;
+                  }
                 }
               }
               else {

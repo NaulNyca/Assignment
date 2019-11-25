@@ -52,7 +52,7 @@
 <div class="contrainer">
     <div class="card border-success myCard">
         <div class="card-header bg-transparent border-success">
-            Thời gian làm bài: 
+            Thời gian làm bài: {{task.p}} phút {{task.s}} giây
         </div>
         <div class="card-body text-success myCardBody" *ngFor="let i of Quiz | paginate: {itemsPerPage: pagesize, currentPage: pagecurrent}">
             <p>Câu {{pagecurrent}}: {{i.Text}}</p>
@@ -62,8 +62,9 @@
                     {{j.Text}}
                 </label>
             </div>
+            <p>Đáp án: {{dapan[pagecurrent - 1]}}</p>
         </div>
-        <div class="card-footer bg-transparent border-success text-center">
+        <div class="card-footer bg-transparent border-success text-center GHJ">
             <div class="bottom">
                 <i class='far fa-hand-point-up' style="font-size: 150%" (click) = 'home()' *ngIf = "showfirth"></i>
                 <i class='far fa-hand-point-right' style="font-size: 150%" (click) = 'next()' *ngIf = "showend"></i>

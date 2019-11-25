@@ -31,105 +31,104 @@
                 </div>
             </div>
             <div class="col-xs-2 col-md-2">
-    
             </div>
             <div class="col-xs-2 col-md-1">
                 <div class="dropdown dropleft user">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{Student.username}}
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" [routerLink]="['/dangnhap']" *ngIf = "!showsubject">Đăng nhập</a>
-                                <a class="dropdown-item" [routerLink]="['/dangki']" *ngIf = "!showsubject">Đăng kí</a>
-                                <a class="dropdown-item" [routerLink]="['/taikhoan']"  *ngIf = "showsubject">Cập nhật tài khoản</a>
-                                <a class="dropdown-item" [routerLink]="['/quenmatkhau']">Quên mật khẩu</a>
-                                <a class="dropdown-item" [routerLink]="['/doimatkhau']">Đổi mật khẩu</a>
-                                <a class="dropdown-item" [routerLink]="['/dangnhap']" (click) = 'dangxuat()' *ngIf = "showsubject">Đăng xuất</a>
-                            </div>
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{Student.username}}
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" [routerLink]="['/dangnhap']" *ngIf = "!showsubject">Đăng nhập</a>
+                        <a class="dropdown-item" [routerLink]="['/dangki']" *ngIf = "!showsubject">Đăng kí</a>
+                        <a class="dropdown-item" [routerLink]="['/taikhoan']"  *ngIf = "showsubject">Cập nhật tài khoản</a>
+                        <a class="dropdown-item" [routerLink]="['/quenmatkhau']">Quên mật khẩu</a>
+                        <a class="dropdown-item" [routerLink]="['/doimatkhau']">Đổi mật khẩu</a>
+                        <a class="dropdown-item" [routerLink]="['/dangnhap']" (click) = 'dangxuat()' *ngIf = "showsubject">Đăng xuất</a>
+                    </div>
                 </div>
             </div>
         </div>
     <div class="contrainer">
         <div class="containerleft">
             <div class="top">
-                    <div class="card border-success myCard" *ngIf = "showthi">
-                            <div class="card-header bg-transparent border-success">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <h4>Môn học: {{subjectname}}</h4>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <h4 style="text-align: right;">Thời gian: 30 phút</h4>
-                                    </div>
-                                </div>
+            <div class="card border-success myCard">
+                    <div class="card-header bg-transparent border-success">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h4>Môn học: {{subjectname}}</h4>
                             </div>
-                            <div class="card-body text-center">
-                                <a class="btn btn-primary" style="margin-top: 3em; font-size: 150%;" (click) = 'start()'>Bắt đầu thi</a>
+                            <div class="col-sm-6">
+                                <h4 style="text-align: right;" *ngIf = 'showthi'>Thời gian làm bài:
+                                    <span id="m">{{m}}</span> phút
+                                    <span id="s">{{s}}</span> giây
+                                </h4>
+                                <h4 style="text-align: right;" *ngIf = '!showthi'>Thời gian còn lại:
+                                    <span id="m">{{m}}</span> phút
+                                    <span id="s">{{s}}</span> giây
+                                </h4>
                             </div>
                         </div>
-
-
-
-                        <div class="card border-success myCard" *ngIf = "!showthi">
-                                <div class="card-header bg-transparent border-success">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <h4>Môn học: {{subjectname}}</h4>
+                    </div>
+                    <div *ngIf = "showthi">
+                        <div class="card-body text-success myCardBody">
+                            <button type="button" class="btn btn-outline-primary" (click) = 'start()'>Bắt đầu làm bài</button>
+                            (Lưu ý khi ấn bắt bắt đầu làm bài thời gian làm bài sẽ bắt đầu đếm ngược.)
+                        </div>
+                    </div>
+                    <div *ngIf = "!showthi">
+                        <div class="card-body text-success myCardBody" *ngFor="let i of Quiz | paginate: {itemsPerPage: pagesize, currentPage: pagecurrent}">
+                            <p>Câu {{pagecurrent}}: {{i.Text}}</p>
+                            <div class="form-check" *ngFor = 'let j of i.Answers'>
+                                <input class="form-check-input" type="radio" name={{i.Id}} value={{j.Id}} [(ngModel)]="task.Ans[pagecurrent -1]" [ngModelOptions]="{standalone: true}">
+                                <label class="form-check-label" for="exampleRadios1">
+                                    {{j.Text}}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent border-success text-center" *ngIf = "!showthi">
+                        <div class="bottom">
+                            <i class='far fa-hand-point-up' style="font-size: 150%" (click) = 'home()' *ngIf = "showfirth"></i>
+                            <i class='far fa-hand-point-right' style="font-size: 150%" (click) = 'next()' *ngIf = "showend"></i>
+                            <i class='far fa-hand-point-down' style="font-size: 150%" (click) = 'end()' *ngIf = "showlast"></i>
+                            <i class='far fa-hand-point-left' style="font-size: 150%" (click) = 'previrous()' *ngIf = "showbegin"></i>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click) = 'finish()' *ngIf = 'showfinish'>
+                                Hoàn thành
+                            </button>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf = "show">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Hoàn thành bài thi</h5>
                                         </div>
-                                        <div class="col-sm-6">
-                                            <h4 style="text-align: right;">Thời gian còn lại:
-                                                <div>
-                                                    <span id="h" name ="gio">Giờ</span> :
-                                                    <span id="m">Phút</span> :
-                                                    <span id="s">Giây</span>
-                                                </div>
-                                            </h4>
+                                        <div class="modal-body text-left">
+                                            Thời gian làm bài: {{89 - m}} phút {{60 - s}} giây <br>
+                                            Điểm của bạn là: {{mark}}
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="card-body text-success myCardBody" *ngFor="let i of Quiz | paginate: {itemsPerPage: pagesize, currentPage: pagecurrent}">
-                                    <p>Câu {{pagecurrent}}: {{i.Text}}</p>
-                                    <div class="form-check" *ngFor = 'let j of i.Answers'>
-                                        <input class="form-check-input" type="radio" name={{i.Id}} value={{j.Id}} [(ngModel)]="task.Ans[pagecurrent -1]" [ngModelOptions]="{standalone: true}">
-                                        <label class="form-check-label" for="exampleRadios1">
-                                            {{j.Text}}
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="card-footer bg-transparent border-success text-center">
-                                    <div class="bottom">
-                                        <i class='far fa-hand-point-up' style="font-size: 150%" (click) = 'home()' *ngIf = "showfirth"></i>
-                                        <i class='far fa-hand-point-right' style="font-size: 150%" (click) = 'next()' *ngIf = "showend"></i>
-                                        <i class='far fa-hand-point-down' style="font-size: 150%" (click) = 'end()' *ngIf = "showlast"></i>
-                                        <i class='far fa-hand-point-left' style="font-size: 150%" (click) = 'previrous()' *ngIf = "showbegin"></i>
-            
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click) = 'finish()' *ngIf = 'showfinish'>
-                                            Hoàn thành
-                                        </button>
-                            
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf = "show">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Hoàn thành bài thi</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        Điểm của bạn là: {{mark}}
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-primary" data-dismiss="modal" [routerLink]="['/xemlai']">Xem lại bài thi</button>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal" [routerLink]="['/xemlai']">Xem lại bài thi</button>
                                         </div>
-            
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="hetgio" id="exampleModalhetgio">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Hết giờ làm bài thi</h5>
+                                </div>
+                                <div class="modal-body">
+                                    Điểm của bạn là: {{mark}}
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal" [routerLink]="['/xemlai']">Xem lại bài thi</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>         
             </div>
         </div>
         <div class="containerright myHeader">

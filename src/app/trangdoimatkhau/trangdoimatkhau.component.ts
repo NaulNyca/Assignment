@@ -33,6 +33,7 @@ export class TrangdoimatkhauComponent implements OnInit {
   }
 
   thaydoi() {
+    this.dangxuat();
     let x = 0;
     if(this.password.length > 7) {
       if(this.password === this.repassword) {
@@ -61,6 +62,8 @@ export class TrangdoimatkhauComponent implements OnInit {
     this.task = {
       "IdSubject": "",
       Ans: [],
+      "p": "",
+      "s": ""
     }
     localStorage.setItem('user', JSON.stringify(this.Student));
     localStorage.setItem('task', JSON.stringify(this.task));

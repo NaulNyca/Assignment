@@ -27,6 +27,7 @@ export class TrangxemlaibaithiComponent implements OnInit {
   showsubject = false;
   show = false;
   showanswer = false;
+  dapan = [];
 
   constructor(private http:HttpClient) { }
   
@@ -39,11 +40,9 @@ export class TrangxemlaibaithiComponent implements OnInit {
     else {
       this.showsubject = true;
     }
-  }
-  
+  }  
   
   getAllQuiz () {
-    console.log(this.ans);
     return this.http.get(this.urlquiz);
   }
   getAll () {
@@ -112,6 +111,14 @@ export class TrangxemlaibaithiComponent implements OnInit {
       }
       this.getAll().subscribe (data=>{
         this.danhmucmonhoc=data;
+        for(var i = 0; i < this.Quiz.length; i++) {
+          for(var j = 0; j < 4; j++) {
+            if(this.Quiz[i].AnswerId === this.Quiz[i].Answers[j].Id) {
+              this.dapan.push(this.Quiz[i].Answers[j].Text);
+            }
+          }
+        }
+        console.log(this.dapan);
       });
     });
   }

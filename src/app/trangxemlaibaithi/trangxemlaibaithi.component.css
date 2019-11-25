@@ -1,5 +1,6 @@
 .body {
     background-image: url(/assets/lonely-pink-flower-on-white-background_23-2147601156.jpg);
+    height: 50em;
 }
 .tieude img {
     width: 100%;
@@ -70,4 +71,7 @@
 }
 .myCollapse {
     margin: -2.8em 0 0 0;
+}
+.GHJ {
+    height: 2.7EM;
 }

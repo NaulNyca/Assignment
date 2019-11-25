@@ -44,7 +44,7 @@
                         <a class="dropdown-item" [routerLink]="['/taikhoan']"  *ngIf = "showsubject">Cập nhật tài khoản</a>
                         <a class="dropdown-item" [routerLink]="['/quenmatkhau']">Quên mật khẩu</a>
                         <a class="dropdown-item" [routerLink]="['/doimatkhau']">Đổi mật khẩu</a>
-                        <a class="dropdown-item" [routerLink]="['/dangnhap']" (click) = 'dangxuat()' *ngIf = "showsubject">Đăng xuất</a>
+                        <a class="dropdown-item" [routerLink]="['/dangnhap']" *ngIf = "showsubject">Đăng xuất</a>
                     </div>
                 </div>
             </div>
@@ -72,9 +72,6 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Đăng nhập thành công</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
                             </div>
                             <div class="modal-body">
                                 Xin chào {{fullname}}
@@ -91,9 +88,6 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Đăng nhập thất bại</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
                             </div>
                             <div class="modal-body">
                                 Sai tên tài khoản hoặc mật khẩu!
